@@ -46,7 +46,7 @@ export function AnimatedText({ text, limit = 140, delay = 5 }: TextBoxProps) {
           // baseText.length <= limit ? setDisplayBtn('') : setDisplayBtn('hidden');
           //   baseText.length <= limit && image1 !== 'undefined' ? setImageActive(true) : setImageActive(false);
           
-          baseText.length <= limit && currentId == "2" ? setCurrentId('map', false) : setCurrentId(currentId, false);
+          // baseText.length <= limit && currentId == "2" ? setCurrentId('map', true) : setCurrentId(currentId, true);
 
 
 

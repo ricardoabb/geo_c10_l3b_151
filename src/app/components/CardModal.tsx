@@ -17,7 +17,7 @@ import 'swiper/css/navigation';
 
 export function CardModal() {
   
-  const { isOpen, title, content, image1, currentId, openModal, closeModal } = useMapStore();
+  const { isOpen, title, content, image1, currentId, openModal, closeModal, contentCustom } = useMapStore();
   if (!isOpen) return null;
 
 
@@ -41,16 +41,15 @@ export function CardModal() {
             exit={{ scale: 0.8 }}
           >
             <div className="relative w-full md:w-auto -mt-8 md:-mt-52">
-              <button onClick={closeModal} className="absolute top-[-50px] md:top-[20px] right-8 md:right-8 z-50">
+              <button onClick={closeModal} className="absolute top-[-50px] md:top-[24px] right-8 md:right-8 z-50">
                 <svg width="23" height="25" className='fill-[#F9D8A7] md:fill-[#544A52]' viewBox="0 0 33 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M32.0156 34.2656H23.7188L15.75 21.3047L7.78125 34.2656H0L11.3672 16.5938L0.726562 0H8.74219L16.125 12.3281L23.3672 0H31.1953L20.4375 16.9922L32.0156 34.2656Z" />
                 </svg>
               </button>
               <div className="relative ">
 
-                <TextBox title={title} content={content} image={image1} imagesubtitle='mapa' hide={false} />
+                <TextBox title={title} content={content} contentCustom={contentCustom} image={image1} imagesubtitle='mapa' hide={false} />
                 <div className='absolute flex left-0 -bottom-[200px] md:-bottom-[330px] w-full'>
-
                 </div>
               </div>
             </div>

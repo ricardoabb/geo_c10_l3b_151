@@ -104,17 +104,36 @@ export default function Map() {
         }
     }, [])
 
+    function handleModal(id: string, isActiveId: boolean) {
+
+
+        // Atualiza estados, se necessário
+        setCurrentId(id, isActiveId);
+        console.log("id: ", isActiveId);
+        if (isActiveId) {
+            const item = info.find(item => item.id === parseInt(id));
+            info.forEach((item) => {
+
+                if (item.id == parseInt(id)) {
+                    openModal({
+                        title: item.title,
+                        content: item.content,
+                        image1: item.image,
+                        imageSubtitle: item.imageSubtitle,
+                        contentCustom: undefined,
+                    });
+                }
+            });
+
+
+        }
+    }
+
     useEffect(() => {
 
+        handleModal("1", true);
 
 
-
-        console.log('Página carregada no cliente!');
-        openModal({
-            title: info[0].title,
-            content: info[0].content,
-            image1: '',
-        });
 
         if (mapRef.current && containerRef.current) {
             const containerBox = containerRef.current.getBoundingClientRect();
@@ -160,12 +179,12 @@ export default function Map() {
     useEffect(() => {
 
         if (!readedInfo.includes(currentId) && currentId != '7' && currentId != '') {
-            readedInfo.push(currentId);
+            // readedInfo.push(currentId);
         }
 
         if (readedInfo.length >= 6) {
-            setCurrentId('usina', false);
-            readedInfo.length = 0;
+            // setCurrentId('usina', false);
+            // readedInfo.length = 0;
         }
 
 
@@ -206,7 +225,7 @@ export default function Map() {
                 >
                     {/* Exemplo de conteúdo do SVG */}
                     <MapSVG />
-                   
+
                     {/* Você pode carregar seu SVG aqui */}
                 </svg>
 
