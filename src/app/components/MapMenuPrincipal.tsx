@@ -36,14 +36,17 @@ export default function MapMenuPrincipal() {
     return (
         <nav className='absolute top-6 left-4 flex flex-col items-start text-left bg-[#fff] p-6 rounded-lg bg-opacity-10 backdrop-blur-sm border-solid border-2 border-[#F9D8A7]'>
             <div className={`flex flex-col items-start gap-2 overflow-hidden `}>
+                <div onClick={() => handleModal("1", true)} className="cursor-pointer hover:translate-x-2 hover:scale-105 transition-all ease-in-out duration-300 ">
+                    <h3 className='bg-[#349C8F] font-bold text-1xl text-white p-1 px-2 rounded-md '>INTRODUÇÃO</h3>
+                </div>
                 <h3 className='bg-[#3A0946] font-bold text-1xl text-white p-1 px-2 rounded-md '>América Anglo-Saxônica</h3>
                 <Link href='/graficos/estados-unidos' className='flex justify-center items-center gap-2'>
-                    
-                        <div className='ml-4 w-4 h-4 bg-[#3587F3] opacity-100 rounded-[.25rem]'></div>
-                        <span className='menu-hover text-xl font-semibold text-[#3A0946]'>Estados Unidos</span>
-                    
+
+                    <div className='ml-4 w-4 h-4 bg-[#3587F3] opacity-100 rounded-[.25rem]'></div>
+                    <span className='menu-hover text-xl font-semibold text-[#3A0946]'>Estados Unidos</span>
+
                 </Link>
-            
+
                 <h3 className='bg-[#3A0946] font-bold text-1xl text-white p-1 px-2 rounded-md'>América Latina</h3>
                 <Link href='/graficos/brasil' className='flex justify-center items-center gap-2' onClick={() => setCurrentId('usina0', true)}>
                     <div className='ml-4 w-4 h-4 bg-[#EE7F00] opacity-100 rounded-[.25rem]'></div>

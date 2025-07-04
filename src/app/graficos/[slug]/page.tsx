@@ -10,7 +10,7 @@ interface Params {
 }
 
 export default function CountryPage({ params }: { params: Params }) {
-  const { slug } = params;  
+  const { slug } = params;
 
 
   const countryInfoData: Record<string, { src: string; id: string; customContent?: ReactNode }> = {
@@ -84,7 +84,122 @@ export default function CountryPage({ params }: { params: Params }) {
         </>
       )
     },
-    // Adicione mais países aqui
+    'mexico': {
+      src: '/GEO_C10_L3B_151_001.svg',
+      id: '4',
+      customContent: (
+        <>
+          <ul className="list-disc space-y-2 text-sm">
+            <li>
+              <span className="font-bold text-[#776CA9]">Idade média:</span> A idade média da população do México é de aproximadamente 27,9 anos.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Distribuição por idade:</span>
+              <ul className="list-disc pl-5">
+                <li><span>0-14 anos:</span> 26,6% da população</li>
+                <li><span>15-64 anos:</span> 62,4% da população</li>
+                <li><span>65 anos ou mais:</span> 11% da população</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Sexo:</span> A população feminina é ligeiramente maior que a masculina, com 51,1% de mulheres e 48,9% de homens.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Tendências:</span> A população do México apresenta um aumento na população masculina em idade ativa, o que pode indicar crescimento na força de trabalho do país.
+              Além disso, o envelhecimento populacional está se acentuando, o que pode trazer impactos importantes para a saúde pública e o sistema de previdência social.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Fonte:</span>
+              <a
+                href="https://www.populationpyramid.net/pt/mexico/2021/?share=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline ml-1"
+              >
+                Pirâmide etária - México 2021
+              </a>
+            </li>
+          </ul>
+        </>
+      )
+    },
+    'brasil': {
+      src: '/GEO_C10_L3B_151_002.svg',
+      id: '5',
+      customContent: (
+        <>
+          <ul className="list-disc space-y-2 text-sm">
+            <li>
+              <span className="font-bold text-[#776CA9]">Idade média:</span> A idade média da população brasileira é de aproximadamente 32,6 anos.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Distribuição por idade:</span>
+              <ul className="list-disc pl-5">
+                <li><span>0-14 anos:</span> 21,3% da população</li>
+                <li><span>15-64 anos:</span> 70,4% da população</li>
+                <li><span>65 anos ou mais:</span> 8,3% da população</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Sexo:</span> A população feminina é ligeiramente maior que a masculina, com 50,8% de mulheres e 49,2% de homens.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Tendências:</span> A população brasileira apresenta tendências semelhantes à população chilena, pois está envelhecendo rapidamente, com uma taxa de crescimento populacional em declínio. A expectativa de vida está aumentando, enquanto a taxa de natalidade está diminuindo.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Fonte:</span>
+              <a
+                href="https://www.populationpyramid.net/pt/brazil/2021/?share=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline ml-1"
+              >
+                Pirâmide etária - Brasil 2021
+              </a>
+            </li>
+          </ul>
+        </>
+      )
+    },
+    'chile': {
+      src: '/GEO_C10_L3B_151_003.svg',
+      id: '6',
+      customContent: (
+        <>
+          <ul className="list-disc space-y-2 text-sm">
+            <li>
+              <span className="font-bold text-[#776CA9]">Idade média:</span> A idade média da população do Chile é de aproximadamente 34,4 anos.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Distribuição por idade:</span>
+              <ul className="list-disc pl-5">
+                <li><span>0-14 anos:</span> 20,1% da população</li>
+                <li><span>15-64 anos:</span> 68,2% da população</li>
+                <li><span>65 anos ou mais:</span> 11,7% da população</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Sexo:</span> A população feminina é ligeiramente maior que a masculina, com 50,7% de mulheres e 49,3% de homens.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Tendências:</span> A população do Chile apresenta tendências semelhantes à população brasileira, com rápido envelhecimento, queda na taxa de natalidade e aumento da expectativa de vida. A taxa de crescimento populacional está em declínio.
+            </li>
+            <li>
+              <span className="font-bold text-[#776CA9]">Fonte:</span>
+              <a
+                href="https://www.populationpyramid.net/pt/chile/2021/?share=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline ml-1"
+              >
+                Pirâmide etária - Chile 2021
+              </a>
+            </li>
+          </ul>
+        </>
+      )
+    },
+
   };
 
   const countryData = countryInfoData[slug];

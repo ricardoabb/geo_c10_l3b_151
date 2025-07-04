@@ -13,12 +13,12 @@ export default function Map() {
 
     const [menuCurrent, setMenuCurrent] = useState(false);
     const [isDragging, setIsDragging] = useState(false);
-    const [readedInfo, setReadedInfo] = useState<string[]>([]);
+    // const [readedInfo, setReadedInfo] = useState<string[]>([]);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [startDragPosition, setStartDragPosition] = useState({ x: 0, y: 0 });
     const [startMousePosition, setStartMousePosition] = useState({ x: 0, y: 0 });
 
-    const { currentId, isActiveId, setCurrentId, setIsActiveId, openModal } = useMapStore();
+    const { currentId, isActiveId, setCurrentId, setIsActiveId, openModal, readedInfo } = useMapStore();
 
     const handleMouseDown = (e: React.MouseEvent | React.TouchEvent) => {
         setIsDragging(true);
@@ -131,7 +131,10 @@ export default function Map() {
 
     useEffect(() => {
 
-        handleModal("1", true);
+        if (!readedInfo.includes("1")) {
+
+            handleModal("1", true);
+        }
 
 
 
@@ -179,12 +182,13 @@ export default function Map() {
     useEffect(() => {
 
         if (!readedInfo.includes(currentId) && currentId != '7' && currentId != '') {
-            // readedInfo.push(currentId);
+            readedInfo.push(currentId);
+            console.log(readedInfo)
         }
 
         if (readedInfo.length >= 6) {
-            // setCurrentId('usina', false);
-            // readedInfo.length = 0;
+            setCurrentId('usina', false);
+            readedInfo.length = 0;
         }
 
 

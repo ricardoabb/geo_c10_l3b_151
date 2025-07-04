@@ -26,7 +26,7 @@ export default function Extras() {
     const [isEnd, setIsEnd] = useState(false);
 
     const isFirst = info[0];
-    const isLast = info.length - 1;
+    const isLast = extras.length - 1;
 
     const sliderRef: any = useRef<SwiperClass>()
     const prevRef = useRef(null);
@@ -36,9 +36,8 @@ export default function Extras() {
 
     const handleSlideChange = (swiper: any) => {
         setActiveIndex(swiper.activeIndex);
-        setCurrentId(sliderRef.current?.swiper.activeIndex, false);
-        console.log(sliderRef.current?.swiper.activeIndex)
-        console.log(currentId)
+        setCurrentId(sliderRef.current?.swiper.activeIndex, true);
+    
 
         // setModal({ image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}` });
 
@@ -49,12 +48,13 @@ export default function Extras() {
         <Home>
             <div>
                 <Swiper
+                
                     modules={[Navigation, A11y]}                    
                     // pagination={{ clickable: true }}
                     spaceBetween={30}
                     slidesPerView={1}
 
-                    onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                    onSlideChange={handleSlideChange}
                     ref={sliderRef}
 
 
